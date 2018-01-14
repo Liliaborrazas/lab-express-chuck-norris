@@ -19,7 +19,7 @@ app.get('/random',(req,res) =>{
 })
 
 
-app.get('/categories',(req,res) =>{
+app.get('/categories',(req,res,next) =>{
   client.getJokeCategories()
   .then((response)=> {
    res.render('categories',{
@@ -31,7 +31,5 @@ app.get('/categories',(req,res) =>{
      console.log(error)
   });
 })
-
-
 
 app.listen(3000)
