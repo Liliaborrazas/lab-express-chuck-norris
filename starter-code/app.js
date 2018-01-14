@@ -13,9 +13,25 @@ app.get('/random',(req,res) =>{
    res.render('random',{
      newJoke: response.value
    })
-  }). catch (( err ) => {
+  }).catch (( err ) => {
       console.log(error)
   });
 })
+
+
+app.get('/categories',(req,res) =>{
+  client.getJokeCategories()
+  .then((response)=> {
+   res.render('categories',{
+      jokeCategories: response
+    })
+    //  console.log(response)
+  })
+  .catch((err)=> {
+     console.log(error)
+  });
+})
+
+
 
 app.listen(3000)

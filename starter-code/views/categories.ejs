@@ -1,3 +1,11 @@
+  
   <body>
-    <h1>Categories</h1>
-  </body>
+      <h1>Categories</h1>
+      <ul>
+      <% jokeCategories.forEach((cat) => { %>
+        <li>
+            <a href="http://localhost:3000/categories?cat=<%=cat%>"><%= cat %> </a>
+        </li>
+        <% }) %>
+      </ul>
+    </body>
